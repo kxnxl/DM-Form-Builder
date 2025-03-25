@@ -1,0 +1,54 @@
+<div [ngSwitch]="typeFormControl.value">
+
+  <ng-template ngSwitchCase="checkbox">
+    <div class="main-controls">
+      <app-checkbox-mockup></app-checkbox-mockup>
+      <ng-template [ngTemplateOutlet]="mainControlsTmp"></ng-template>
+    </div>
+  </ng-template>
+
+  <ng-template ngSwitchCase="long-text">
+    <div class="main-controls">
+      <ng-template [ngTemplateOutlet]="mainControlsTmp"></ng-template>
+    </div>
+    <app-textarea-mockup [placeholderFormControl]="placeholderFormControl"></app-textarea-mockup>
+  </ng-template>
+
+  <ng-template ngSwitchDefault>
+    <div class="main-controls">
+      <ng-template [ngTemplateOutlet]="mainControlsTmp"></ng-template>
+    </div>
+    <app-input-mockup [placeholderFormControl]="placeholderFormControl"></app-input-mockup>
+  </ng-template>
+
+</div>
+
+
+<ng-template #mainControlsTmp>
+  <app-editable-label [parentFormControl]="labelFormControl"
+                      [options]="{fontSize: '13.5px', height: '20px'}">
+  </app-editable-label>
+
+  <button nz-button class="small-icon-btn"
+          [nz-tooltip]="required ? 'Mark as optional' : 'Mark as required'"
+          (click)="updateRequired()">
+    <i nz-icon
+       nzType="exclamation-circle"
+       [style.color]="required ? 'red' : ''">
+    </i>
+  </button>
+
+  <button nz-button class="small-icon-btn"
+          nz-tooltip="Delete"
+          (click)="deleteElement.emit()">
+    <i nz-icon
+       nzType="delete"
+       nzTheme="twotone"
+       nzTwotoneColor="red">
+    </i>
+  </button>
+
+  <app-element-type-select class="element-type-select"
+                           [type]="typeFormControl">
+  </app-element-type-select>
+</ng-template>

@@ -1,0 +1,53 @@
+{
+  "columnsNum": 2,
+  "name": "Shipping Information",
+  "elements": [
+    {
+      "label": "First Name",
+      "type": "short-text",
+      "required": true,
+      "placeholder": "Enter first name"
+    },
+    {
+      "label": "Last Name",
+      "type": "short-text",
+      "required": true,
+      "placeholder": "Enter last name"
+    },
+    {
+      "label": "City",
+      "type": "short-text",
+      "required": true
+    },
+    {
+      "label": "Street Address",
+      "type": "short-text",
+      "required": true
+    },
+    {
+      "label": "Apt., Suite, Unit, Etc. (optional)",
+      "type": "short-text"
+    },
+    {
+      "label": "ZIP Code",
+      "type": "number",
+      "required": true
+    },
+    {
+      "label": "Phone Number",
+      "type": "number",
+      "required": true,
+      "placeholder": "Enter phone number"
+    },
+    {
+      "label": "Email Address",
+      "type": "email",
+      "required": true,
+      "placeholder": "Enter email"
+    },
+    {
+      "label": "Additional Information (optional)",
+      "type": "long-text"
+    }
+  ]
+}

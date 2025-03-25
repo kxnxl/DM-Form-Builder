@@ -1,0 +1,100 @@
+@import 'styles/global/_colors.less';
+
+:host {
+  display: flex;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@border: 1px solid @light-grey-2;
+
+.app-layout {
+  height: 100vh;
+}
+
+.menu-sidebar {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  box-shadow: 2px 0 6px rgba(0, 21, 41, .2);
+}
+
+.header-trigger {
+  height: 64px;
+  padding: 0 24px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all .3s, padding 0s;
+}
+
+.sign-in-btn {
+  margin-right: 10px;
+}
+
+.sign-up-btn, .sign-out-btn {
+  margin-right: 16px;
+}
+
+.trigger:hover {
+  color: @blueviolet;
+}
+
+.sidebar-logo {
+  position: relative;
+  height: 64px;
+  margin: 0 16px;
+  padding: 0 8px;
+  overflow: hidden;
+  line-height: 64px;
+  background: @white;
+  transition: all .3s;
+  border-bottom: @border;
+}
+
+.sidebar-logo img {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  vertical-align: middle;
+}
+
+.sidebar-logo h1 {
+  display: inline-block;
+  margin: 0 0 0 15px;
+  color: @dark-grey;
+  font-weight: 600;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+nz-header {
+  padding: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.app-header {
+  position: relative;
+  height: 64px;
+  padding: 0;
+  background: @white;
+  border-bottom: @border;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inner-content {
+  position: relative;
+  padding: 30px;
+  background: @light-grey-1;
+  height: 100%;
+
+  .icons-credit {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 11px;
+  }
+}

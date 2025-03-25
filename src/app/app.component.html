@@ -1,0 +1,76 @@
+<nz-layout class="app-layout">
+  <app-auth *ngIf="isSigningIn"
+            (signedIn)="onSignedIn()">
+  </app-auth>
+  <nz-sider class="menu-sidebar"
+            nzCollapsible
+            nzWidth="256px"
+            nzBreakpoint="md"
+            [(nzCollapsed)]="isCollapsed"
+            [nzTrigger]="null">
+    <div class="sidebar-logo">
+      <img src="assets/img/form.svg" alt="logo">
+      <h1>Form Builder Demo</h1>
+    </div>
+    <ul nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-menu-item nzMatchRouter title="Create Form">
+        <i nz-icon nzType="form"></i>
+        <span routerLink="/create">Create Form</span>
+      </li>
+      <li nz-submenu nzOpen nzTitle="Pre-Built Forms" nzIcon="container" title="Pre-Built Forms">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <span [routerLink]="['/pre-built', 'register']">Register</span>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <span [routerLink]="['/pre-built', 'shipping']">Shipping Information</span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+          <i class="trigger"
+             nz-icon
+             [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'">
+          </i>
+        </span>
+        <ng-container *ngIf="isSignedIn then signOutBtnTmp else signInBtnTmp"></ng-container>
+        <ng-template #signOutBtnTmp>
+          <button nz-button
+                  class="sign-out-btn"
+                  (click)="signOut()">
+            Sign Out
+          </button>
+        </ng-template>
+        <ng-template #signInBtnTmp>
+          <div>
+            <button nz-button
+                    class="sign-in-btn"
+                    (click)="isSigningIn = true">
+              Sign In
+            </button>
+            <button nz-button
+                    nzType="primary"
+                    class="sign-up-btn"
+                    (click)="isSigningIn = true">
+              Sign Up
+            </button>
+          </div>
+        </ng-template>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+        <div class="icons-credit">
+          Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>
+          from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+        </div>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>

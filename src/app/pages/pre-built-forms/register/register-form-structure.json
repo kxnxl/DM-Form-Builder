@@ -1,0 +1,45 @@
+{
+  "columnsNum": 2,
+  "name": "Create an account",
+  "elements": [
+    {
+      "label": "Email",
+      "type": "email",
+      "required": true,
+      "placeholder": "Enter email"
+    },
+    {
+      "label": "Birth Date",
+      "type": "date",
+      "placeholder": "Select birth date"
+    },
+    {
+      "label": "First Name",
+      "type": "short-text",
+      "required": true,
+      "placeholder": "Enter first name"
+    },
+    {
+      "label": "Last Name",
+      "type": "short-text",
+      "placeholder": "Enter last name"
+    },
+    {
+      "label": "Password",
+      "type": "password",
+      "required": true,
+      "placeholder": "Enter password"
+    },
+    {
+      "label": "Repeat Password",
+      "type": "password",
+      "required": true,
+      "placeholder": "Repeat password"
+    },
+    {
+      "label": "Accept our Terms and Conditions",
+      "type": "checkbox",
+      "required": true
+    }
+  ]
+}

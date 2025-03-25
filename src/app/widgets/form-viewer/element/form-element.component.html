@@ -1,0 +1,30 @@
+<div [ngSwitch]="element.type">
+
+  <ng-template ngSwitchCase="checkbox">
+    <app-checkbox-form-element [element]="element"></app-checkbox-form-element>
+  </ng-template>
+
+  <ng-template ngSwitchCase="long-text">
+    <ng-template [ngTemplateOutlet]="label"></ng-template>
+    <app-textarea-form-element [element]="element"></app-textarea-form-element>
+  </ng-template>
+
+  <ng-template ngSwitchCase="date">
+    <ng-template [ngTemplateOutlet]="label"></ng-template>
+    <app-date-form-element [element]="element"></app-date-form-element>
+  </ng-template>
+
+  <ng-template ngSwitchDefault>
+    <ng-template [ngTemplateOutlet]="label"></ng-template>
+    <app-input-form-element [element]="element"></app-input-form-element>
+  </ng-template>
+
+</div>
+
+
+<ng-template #label>
+  <div class="label">
+    {{element.label}}
+    <span *ngIf="element.required" class="required-sign">*</span>
+  </div>
+</ng-template>
